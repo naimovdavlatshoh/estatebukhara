@@ -1,0 +1,135 @@
+        <div class="left  w-sm-100 ">
+           <div class="fs-35 fs-sm-25 b-1 mb-4 bg-white p-3 px-4 shadow-1 rounded-1">
+              Сергели тумани, Қўйлиқ 6 массив, Нуфузли маҳалласи
+              <br>
+              <span class="text-light bg-green rounded-1 fs-18 px-2 py-1">Рекомендуемые</span>
+              <span class="text-light bg-night rounded-1 fs-18 px-2 py-1">Продажа</span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="mt-4 b-2 fs-18">Description: {{flat.view_set.count}}</div>
+                <div class="mt-4 b-2 fs-22"> {{flat.price_usd}} $</div>
+               </div>
+           </div>
+
+           <div class="p-4 bg-white shadow-1 rounded-1">
+                <div class="">
+                    <img class="w-100 rounded-1" src="{{flat.image.url}}" alt="">
+                </div>
+              <div>
+                  <p class="fs-22 text-ocean b-1">Gallery</p>
+                  <hr>
+                <div class="grid-5 gap-1 mt-4">
+                
+                    <img class="w-100 rounded-1 d-block" src="{{flat.image.url}}" alt="">
+                    <img class="w-100 rounded-1 d-block" src="{{flat.image.url}}" alt="">                 
+                    <img class="w-100 rounded-1 d-block" src="{{flat.image.url}}" alt="">  
+                    <img class="w-100 rounded-1 d-block" src="{{flat.image.url}}" alt="">
+                    <img class="w-100 rounded-1 d-block" src="{{flat.image.url}}" alt="">
+                 
+                  
+                 </div>
+              </div>
+           </div>
+
+          
+           <div class=" mt-4  mb-4 bg-white p-4  shadow-1 rounded-1">
+              <div class="fs-25 b-1">Обзор</div>
+              <div class="hr-dark-light my-5"></div>
+              <div class="d-flex justify-content-between align-items-center ">
+                 <div class="fs-18">
+                    <span class="b-1">{{flat.title}}</span>
+                    <br>
+                    {{flat.category}}
+                 </div>
+                 <div class="fs-18">
+                    <span class="b-1"><i class='bx bx-bed mr-2'></i> {{flat.rooms}}</span>
+                    <br>
+                    
+                 </div>
+                 <div class="fs-18">
+                    <span class="b-1"><i class='bx bx-map mr-2'></i> {{flat.square}}</span>
+                    <br>
+                    Общая
+                 </div>
+              </div>
+           </div>
+           <div class=" mt-4  mb-4 bg-white p-4 shadow-1 rounded-1">
+              <div class="fs-25">{{flat.content}}</div>
+              <div class="hr-dark-light my-5"></div>
+              <div class=" ">
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quod in error unde! Vero, tempora corporis rem assumenda, repudiandae sequi aut culpa distinctio iste veniam possimus dolore autem laboriosam inventore laudantium! Ratione vel, atque voluptatem saepe veniam provident modi maiores officiis earum quaerat ex nobis! A esse consequatur commodi ducimus?
+              </div>
+           </div>
+           <div class=" mt-4  mb-4 bg-white p-4 shadow-1 rounded-1">
+              <div class="fs-25">{{flat.address}}</div>
+              <div class="hr-dark-light my-5"></div>
+              <ul class=" ">
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Rooms</div>
+                    <div class="ml-auto">{{flat.rooms}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Square</div>
+                    <div class="ml-auto">{{flat.square}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Floor_number</div>
+                    <div class="ml-auto">{{flat.floor_number}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Plan</div>
+                    <div class="ml-auto">{{flat.plan}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Bathroom</div>
+                    <div class="ml-auto">{{flat.bathroom}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Ceiling</div>
+                    <div class="ml-auto">{{flat.ceiling}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Floor_number</div>
+                    <div class="ml-auto">{{flat.floor_number}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Furniture</div>
+                    <div class="ml-auto">{{flat.furniture}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Total_square</div>
+                    <div class="ml-auto">{{flat.total_square}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">House_square</div>
+                    <div class="ml-auto">{{flat.house_square}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Electrocity</div>
+                    <div class="ml-auto">{{flat.electrocity}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Gas</div>
+                    <div class="ml-auto">{{flat.gas}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Heating</div>
+                    <div class="ml-auto">{{flat.heating}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Water</div>
+                    <div class="ml-auto">{{flat.water}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Sewerage</div>
+                    <div class="ml-auto">{{flat.sewerage}}</div>
+                 </li>
+                 <li class="d-flex mb-3 pb-2 align-items-center border-bottom-light fs-18">
+                    <div class="b-1">Repair</div>
+                    <div class="ml-auto">{{flat.repair}}</div>
+                 </li>
+              </ul>
+           </div>
+        </div>
+        
+    
+

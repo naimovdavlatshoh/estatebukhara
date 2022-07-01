@@ -1,0 +1,7 @@
+{% for category in categories %}
+    {% if category.title != 'Коммерческий' %}
+    <a class="a-category" href="{% url 'category_detail' category.id %}">
+        <li class="li-category">{{category.title}}</li>
+    </a>
+    {% endif %}
+{% endfor %}

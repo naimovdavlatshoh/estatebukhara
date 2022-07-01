@@ -1,0 +1,132 @@
+   {% extends 'base.html' %}
+   {% load static %}
+   {% block title %} Home {% endblock %}
+
+   {% block content %}
+      <!-- Main -->
+
+   <div class="bg-light min-vh-100">
+      <div class="px-4 px-sm-2">
+         <div class=" min-vh-sm-50 header bg-white  rounded-1">
+         
+         </div>
+         <div class="house-section  rounded-1  my-4">
+            <div style="line-height:1.5" class="fs-40 fs-sm-25 mb-4 b-1  bg-white  p-3 rounded-1 shadow-1  text-center">
+               Рекомендуемые 
+            </div>
+            <div class="pt-4 px-4 bg-white rounded-1 mt-4">
+               <div class="d-flex">
+                  <a href="{% url 'all_estates' %}" class="rounded-1 btn btn-outline-ocean mb-3 ">
+                     Посмотреть все
+                  </a>
+               </div>
+               <div id="image-slider1" class="splide ">
+                  <div class="splide__track h-100">
+                     <ul class="splide__list h-100">
+                        {% for flat in flats %}
+                        <li class="splide__slide h-100  py-4">
+                           <div class="scene ">
+                              <div  class="item rounded-1 d-flex justify-content-between">
+                                 <div class="front  p-4  d-flex flex-column justify-content-between">
+                                    <img class="rounded-1" src="{{flat.image.url}}" alt="">
+                                    <div class="">
+                                       <span class="title bg-dark-green text-white fs-10 b-2 rounded-1 p-1 px-2">РЕКОМЕНДУЕМЫЕ</span>
+                                    </div>
+                                    <div class="item-footer">
+                                       <span class="title bg-dark-night text-white fs-13 b-2 rounded-1 p-1 px-2">ПРОДАЖА</span>
+                                       <div class="mt-2">
+                                          <span class="text-white b-2 fs-25">{{flat.price_usd}} y.e</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="d-flex ml-auto ">
+                                    <div class="fs-20 ml-auto mr-1 mt-4 text-light"><i class='bx bx-low-vision'></i></div>
+                                    <div class="fs-18 ml-auto mr-4 mt-4 text-light">{{flat.view_set.count}}</div>
+                                 </div>
+                                 <div class="back rounded-1 p-4 ">
+                                    <div class="layer-content d-flex flex-column justify-content-between h-100">
+                                       <div class="grid-3 border-bottom-light grid-sm-3 gap-1">
+                                          <div class="room  p-2  text-white">
+                                             <div class=" text-center fs-20">{{flat.rooms}}</div>
+                                             <div class=" fs-17 text-center">Комнат</div>
+                                          </div>
+                                          <div class="room text-white p-2">
+                                             <div class=" text-center fs-20">{{flat.square}}</div>
+                                             <div class=" fs-17 text-center">М <sup>2</sup></div>
+                                          </div>
+                                          <div class="room text-white  p-2">
+                                             <div class=" text-center fs-20">{{flat.floor_number}}</div>
+                                             <div class=" fs-17 text-center">Этаж</div>
+                                          </div>
+                                       </div>
+                                       <div class="address text-light">{{flat.address}}</div>
+                                       <a href="{% url 'product_detail' flat.id %}" class="btn b-1 btn-light rounded-1 w-50 mx-auto">Посмотреть</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        {% endfor %}
+                     </ul>
+                  </div>
+               </div>
+          
+            </div>
+         </div>
+       
+         
+
+
+         
+
+
+
+
+         
+   </div>
+
+
+   <script>
+      let cards = document.querySelectorAll('.item')
+
+      for(let card of cards){
+         card.addEventListener('click', ()=> {
+            card.classList.toggle('active')
+         })
+      }
+
+      document.addEventListener( 'DOMContentLoaded', function () {
+
+      var flat = new Splide( '#image-slider1', {
+         perPage: 4,
+         breakpoints: {
+            640: {
+              perPage: 1,
+        
+            },
+            767: {
+              perPage: 2,
+          
+            },
+            1024: {
+              perPage: 3,
+             
+            },
+          },
+         gap:25,
+         pagination: false
+         
+
+      });
+
+      
+      flat.mount()
+ 
+
+
+
+} );
+         
+
+   </script>
+   {% endblock %}

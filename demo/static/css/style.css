@@ -1,0 +1,457 @@
+
+
+:root{
+    --red--: #ff4d4d;
+    --dark-red--: #ff3838;
+
+    --blue--: #00a8ff;
+    --dark-blue--: #0097e6;
+
+    --orange--: #fd9644;
+    --dark-orange--: #fa8231;
+
+    --yellow--: #fed330;
+    --dark-yellow--: #f7b731;
+
+    --green--: #26de81;
+    --dark-green--: #20bf6b;
+
+    --purple--: #a55eea ;
+    --dark-purple--: #8854d0;
+
+    --ocean--: #1d1d31;
+    --dark-ocean--: #11101d;
+
+    --night--: #353b48;
+    --dark-night--: #2f3640;
+
+    --grey--: #7f8fa6;
+    --dark-grey--: #718093;
+
+    --light--: #f5f6fa;
+    --dark-light--: #dcdde1;
+}
+
+
+.imgFavourite{
+    height: 170px !important;
+    width: 100% !important;
+}
+
+
+
+
+/* Sign in section */
+
+.sign_in_container .left{
+    /* background: url('../images/color-image.png'); */
+    background: var(--dark-night--);
+}
+
+
+.sign_in_container .left .copy {
+    color: white;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.right form {
+    width: 328px;
+}
+
+
+.sidebar{
+    z-index: 9999;
+}
+
+.top_navigator{
+    position: fixed;
+    top: 0 !important;
+    
+}
+
+.estates_img{
+    height: 200px;
+}
+
+
+.modal_page{
+    height: 100%;
+    background: grey
+}
+
+.imgProductDetail{
+    height: 200px !important;
+}
+
+
+
+.modal_{
+ position: fixed;
+ align-items: center;
+ justify-content: center;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.24);
+ z-index: 999;
+  
+}
+
+.modal{
+    position: absolute;
+    top: 35%;
+    left: 37%;
+}
+
+
+.contact-info i{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+}
+
+
+.navbar_ a {
+    display: block !important;
+}
+
+
+.navbar_ > li{
+    border: 1px solid var(--dark-light--);
+    border-right: none;
+    position: relative;
+ 
+}
+
+
+.navbar_ > li > a {
+    color: var(--dark-ocean--);
+}
+
+.navbar_ > li:hover .nav_drop_link {
+    color: #fff;
+}
+
+
+.navbar_ > li:hover .nav_link {
+    color: #fff;
+}
+
+
+.navbar_ > li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navbar_ > li:last-child  {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar_ > li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navbar_ > li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: 1px solid var(--dark-light--);
+}
+
+/* Dropdown parent */
+
+.navbar_ .dropdown-parent {
+    position: relative;
+    border: 1px solid var(--dark-light--);
+    border-right: none;
+}
+
+
+/* Dropdown parent arrow */
+.navbar_ .dropdown-parent::after{
+    content: '';
+    position: absolute;
+    border-top: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 85%;
+    transform: translate(0, -50%) rotate(225deg);
+    
+}
+
+
+
+
+.navbar_ > li:hover {
+    background: var(--ocean--);
+}
+
+
+.navbar_ .dropdown-parent:hover .dropdown {
+    display: block;
+}
+
+
+/* Dropdown */
+.navbar_ .dropdown {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    background: white;
+    color: #111;
+    border: 1px solid #ddd;
+    border-top: none;
+    white-space: nowrap;
+    display: none;
+}
+
+
+
+.navbar_ .dropdown li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #000;
+    transition: 200ms ease-in-out;
+}
+
+
+.navbar_ .dropdown li:hover {
+    color: var(--dark-ocean--);
+    background: var(--light--);
+}
+
+
+.navbar_ .dropdown a:last-child li{
+    border-bottom: none;
+}
+
+
+
+/* Right navbar */
+
+
+.navbar_right  {
+    position: relative;
+}
+
+/* Plenka */
+.navbar_right a {
+    color: var(--ocean--);
+    font-weight: 500;
+}
+
+.navbar_right li:hover{
+    background: var(--ocean--);
+    color: #fff;
+}
+
+
+.navbar_right:hover .nav_link {
+    color: #fff;
+}
+
+
+.logo  {
+    /* width: 110px; */
+}
+
+.logo img {
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* header */
+
+.header {
+    height: calc(100vh - 242.03px);
+    background: url('https://www.vidyard.com/media/real-estate-video-marketing-1920x1080-1.jpg'), rgba(0, 0, 0, 0.044);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+
+/* house section */
+
+
+.house-section .front {
+    position: relative;
+}
+
+.house-section img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -9;
+    filter: brightness(50%);
+}
+
+.house-section .scene {
+    perspective: 800px;
+    height: 220px;
+}
+
+
+
+
+.house-section .item {      
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: multiply;
+ 
+    height: 100%;
+    width: 100%;
+}
+
+
+.imgEye{
+    width: 20px !important;
+    height: 10px !important;
+}
+
+.house-section .item .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.house-section .item .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    background: var(--ocean--);
+    opacity: 0.9;
+    transform: rotateY( 180deg );
+
+}
+
+
+.house-section .item.active {
+    transform: rotateY(-180deg);
+}
+
+
+.house-section .title {
+    font-size: 10px;
+}
+
+
+
+/* Category detail */
+
+.category_detail_section_container > .left {
+    width: 70%;
+}
+
+.category_detail_section_container > .right {
+    width: 28%;
+}
+
+
+.category_detail_section_container > .right ul li:hover{
+    background: var(--light--);
+}
+
+.category_detail_section .left{
+    width: 30%;
+}
+
+
+.category_detail_section .right{
+    width: 68%;
+}
+
+
+/* Product detail */
+.product_detail__section_container .right{
+    width: 28%;
+}
+
+
+.product_detail__section_container .left{
+    width: 70%;
+}
+
+
+.product_detail__section_container > .right ul li:hover{
+    background: var(--light--);
+}
+
+
+/* About section */
+
+.about-header {
+    background: url("/static/images/about.jpg"), rgba(0, 0, 0, 0.589);
+    height: 200px;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+    .home_content .right img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+
+    .header {
+        height: 50vh;
+    }
+
+    .modal_{
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.24);
+        z-index: 999;
+         
+       }
+
+    
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+   
+}
+
+
+@media screen and (min-width: 992px) {
+   
+}

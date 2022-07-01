@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="bg-light min-vh-100">
+    <div class="px-4 px-sm-0">
+
+        <div class="category_detail_section_container d-flex flex-wrap  rounded-1   mb-4">
+            <div class="left w-65 w-sm-100 ">
+               <div class="fs-30 b-1 mb-4 bg-white p-3 px-4 shadow-1 rounded-1">
+                Избранное
+                </div>
+                <div class="grid-3 px-4 gap-1">
+                    {% for favourite in favourites %}
+                    
+                          <div  class="item rounded-1  inner-shadow">
+                             
+                                <div>
+                                    <img class="rounded-1 w-100 imgFavourite" src="{{favourite.flat.image.url}}" alt="">  
+                                </div>
+                           
+                             
+                                <div class="d-flex px-2 py-2 justify-content-between align-items-center">
+                                    <div class="">
+                                        <span class="text-ocean b-2 fs-25">{{favourite.flat.price_usd}} y.e</span>
+                                     </div>
+                                      
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="{% url 'product_detail' favourite.flat.id %}" class="btn b-1 btn-ocean rounded-1 ">Посмотреть</a>
+                                    </div>
+                                </div>
+                                
+                          </div>
+                       
+                    {% endfor %}
+                </div>
+                
+            </div>
+  
+  
+            <div class="w-30 w-sm-100 ml-auto">
+              {% include 'pages/user/menu.html' %}
+              
+          </div>
+            
+           
+            
+         </div>
+
+
+    </div>
+
+    
+</div>
+
+
+<div class="modal_ d-none">
+    <div class="modal bg-light  rounded-1 p-4">
+       <p class="fs-22 text-ocean mt-0">вы точно хотите выйти из аккаунта</p>
+       <hr class=" bg-dark-light">
+       <div class="d-flex justify-content-between">
+         <a href="{% url 'sign_out' %}" class="btn w-45 btn-red rounded-1 mt-3">Да</a>
+         <button class="btn close_btn w-45 btn-green rounded-1 mt-3">Нет</button>
+       </div>
+    </div>
+ </div>
+
+
+
+
+{% endblock %}

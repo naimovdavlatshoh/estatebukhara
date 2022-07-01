@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load navbar_tags %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+   
+
+<div class="bg-light min-vh-100">
+   <div class="px-4 px-sm-0">
+    <div class="grid-4 gap-1">
+        {% for estate in estates %}
+        <div class="d-flex bg-white  rounded-1 shadow-2  justify-content-between flex-wrap">
+            <img class="estates_img w-sm-100  w-100 rounded-1 d-block" src="{{estate.image.url}}" alt="">
+            <div class="d-flex w-100  p-2 align-items-center ">
+                <div class="text-ocean b-1 fs-20">{{estate.price_usd}}$</div>
+                <a  href="{% url 'product_detail' estate.id %}" class="btn btn-ocean rounded-1 ml-auto">Посмотреть</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+   
+
+   </div>
+</div>
+
+
+
+{% endblock %}

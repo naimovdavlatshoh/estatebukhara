@@ -1,0 +1,25 @@
+{% if request.user.is_authenticated %}
+<div class="right   w-sm-100 ml-auto">
+    <div class=" mb-4   rounded-1">
+        <ul class="rounded-1 p-4 bg-white shadow-1 grid-1 gap-1">
+           <a href="{% url 'user_index' %}" class=" d-block ">
+               <li class="{% if request.path == '/user/' %} bg-light {% endif %} text-dark-night b-1 border-dark-light rounded-1 p-3">Главная</li>
+           </a>
+           <a href="{% url 'personal' %}" class=" d-block">
+               <li class="text-dark-night b-1 border-dark-light rounded-1 p-3">Личные данные</li>
+           </a>
+           <a href="{% url 'favourite' %}" class=" d-block">
+               <li class="text-dark-night b-1 border-dark-light rounded-1 p-3">Избранное</li>
+           </a>
+           <div class="modal_btn text-dark-night b-1 border-dark-light rounded-1 p-3">
+               Выйти
+           </div>
+       
+        </ul>
+     </div>
+ </div>
+{% else %}
+
+
+
+{% endif %}

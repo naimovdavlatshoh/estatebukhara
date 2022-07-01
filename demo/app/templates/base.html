@@ -1,0 +1,172 @@
+{% load static %}
+{% load navbar_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'splide/dist/css/splide.min.css' %}">
+
+</head>
+<body>
+    <div class="top_navigator d-none">
+        <div class="logo_content">
+            <div class="logo">
+                <!-- <i class='bx bxl-c-plus-plus'></i> -->
+                <div class="logo_name">E-Bukhara</div>
+            </div>
+            <i class='bx bx-menu' id="btn2"></i>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                    <!-- <i class='bx bxl-c-plus-plus'></i> -->
+                <div class="logo_name">Real Estate</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+                <li class="">
+                    <form action="">
+                        <button><i class='bx bx-search'></i></button>
+                        <input placeholder="Search..." type="text">
+                        <span class="tooltip">Search</span>
+                    </form>
+                
+                <li>
+                    <a href="{% url 'index' %}">
+                        <!-- <i class='bx bx-grid-alt'></i> -->
+                        <span class="links_name">{% navbar_tags %}</span>
+                    </a>
+               
+               
+                
+                
+               
+                
+        </ul>
+        <div class="profile-content">
+                <div  class="profile">
+                    {% if request.user.is_authenticated %}
+                        <a class="profile_details text-light" href="{% url 'user_index' %}">
+                            <img src="{% static 'me.JPG' %}" alt="">
+                            <div class="name_job">
+                                <div class="name">{{request.user.last_name}} {{request.user.first_name}}</div>
+                                <div class="job">Web Developer</div>
+                            </div>
+                        </a>
+                        <a href="{% url 'sign_out' %}">
+                            <i class='bx bx-log-out log' ></i>
+                        </a>
+                    {% else %}
+                    <a href="{% url 'sign_in' %}">
+                        <i class='bx bx-log-in log'></i>
+                    </a>
+                    {% endif %}
+                </div>
+            
+        </div>
+    </div>
+    <div class="bg-light  px-4 py-4">
+        <div class="d-sm-none shadow-1 pt-3 pb-3 px-3 border-bottom-light bg-white rounded-1">
+            <div class="d-flex align-items-center ">
+               <a href="{% url 'index' %}" class="logo fs-30 b-1 ">
+                   <!-- <img class="w-100" src="{% static 'images/logo.jpg' %}" alt=""> -->
+                   <div class="px-4 py-2 bg-ocean  text-light rounded-1">
+                     E-Bukhara
+                   </div>
+               </a>
+               <div class="links border ml-auto align-items-center d-flex">
+                  <a href="" class="border-dark-light px-2 py-2 rounded-1 text-ocean mr-2 d-flex align-items-center"><i class='bx bxl-instagram fs-23 '></i></a>
+                  <a href="" class="border-dark-light px-2 py-2 rounded-1 text-ocean d-flex align-items-center"><i class='bx bxl-telegram fs-23' ></i></a>
+               </div>
+               <div class="contact-info ml-5 d-flex">
+                  <a href="" class="d-flex align-items-center border-dark-light px-3 py-2 rounded-1">
+                     <i class='bx bxs-phone fs-17 text-ocean rounded-3' ></i>
+                     <div class=" ml-2 fs-15 text-ocean b-1">+998 91 920 78 98</div>
+                  </a>
+                  <a href="" class="d-flex align-items-center ml-3 border-dark-light px-3 py-2 rounded-1">
+                     <i class='bx bxl-telegram fs-17 text-ocean' ></i>
+                     <div class=" ml-2 fs-15 text-ocean b-1">Телеграм канал</div>
+                  </a>
+                  
+               </div>
+            </div>
+            <div class="hr-dark-light"></div>
+            <div class="d-flex mt-4">
+                <ul class="d-flex   navbar_">
+                    <li class=" border-right-light  ">
+                        <a class="nav_link b-1 p-2 px-3" href="{% url 'index' %}">Главная</a>
+                    </li>
+                    <li class="dropdown-parent    ">
+                        <div class="nav_drop_link p-2 px-3 pr-4 b-1">
+                            Продажа
+                        </div>
+                        <ul  class="dropdown">
+                            {% navbar_tags %}
+                        </ul>
+                    </li>
+                    <li class="dropdown-parent   ">
+                    <div class="nav_drop_link p-2 px-3 pr-4 b-1">Аренда</div>
+                        <ul class="dropdown">
+                            <a href="">
+                                <li>Коммерческое помещение</li>
+                            </a>    
+                        </ul>
+                    </li>
+                    <li class=" ">
+                        <a class="nav_link b-1  p-2 px-3" href="{% url 'about' %}">О компаниии</a>
+                    </li>
+                   
+                 </ul>
+     
+                 <ul class="d-flex  navbar_right ml-auto">
+                    {% if user.is_authenticated %}
+                     
+                        <li class="text-dark-ocean  b-1 border-dark-light rounded-1 p-2 px-3">
+                            <a class="nav_link" href="{% url 'user_index' %}">Кабинет</a>
+                        </li>
+
+                    {% else %}
+                    <a href="{% url 'sign_in' %}">
+                        <li class=" border-light rounded-1 p-2 px-3">Авторизоваться / Регистрация</li>
+                     </a>
+                    {% endif %}
+                      
+                 </ul>
+            </div>
+        </div>
+    </div>
+   
+   <!-- Main -->
+   {% block content %}
+   <div class="home_content ">
+    
+        
+            
+    
+    </div>
+    {% endblock %}
+    <div class="footer bg-ocean">
+        <div class="text-center text-light  py-3 fs-18 b-1">E-Bukhara 2022</div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'splide/dist/js/splide.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
+
+</body>
+</html>
